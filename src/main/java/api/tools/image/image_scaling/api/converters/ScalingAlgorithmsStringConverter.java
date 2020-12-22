@@ -7,6 +7,10 @@ public class ScalingAlgorithmsStringConverter implements Converter<String, Scali
 
 	@Override
 	public ScalingAlgorithms convert(String source) {
-		return ScalingAlgorithms.valueOf(source.toUpperCase());
+		try {
+			return ScalingAlgorithms.values()[Integer.parseInt(source)]; // May need to cache this one
+		}catch (NumberFormatException e) {
+			return ScalingAlgorithms.valueOf(source.toUpperCase());
+		}
 	}
 }
