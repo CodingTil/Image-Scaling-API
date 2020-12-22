@@ -17,11 +17,11 @@ public class NearestNeighborInterpolation extends ScalingAlgorithm {
 
 		double x_ratio = originalWidth/(double)newWidth;
 		double y_ratio = originalHeight/(double)newHeight;
-		double px, py ;
+		double px, py;
 		for (int i = 0; i < newHeight; i++) {
 			for (int j = 0; j < newWidth; j++) {
-				px = Math.floor(j*x_ratio) ;
-				py = Math.floor(i*y_ratio) ;
+				px = Math.floor(j*x_ratio);
+				py = Math.floor(i*y_ratio);
 				newPixels[i][j] = originalPixels[(int) py][(int) px];
 			}
 		}
